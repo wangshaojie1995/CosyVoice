@@ -43,7 +43,7 @@
 - [x] 2024/07
 
     - [x] Flow matching training support
-    - [x] WeTextProcessing support when ttsfrd is not avaliable
+    - [x] WeTextProcessing support when ttsfrd is not available
     - [x] Fastapi server and client
 
 
@@ -104,7 +104,7 @@ git clone https://www.modelscope.cn/iic/CosyVoice-300M-Instruct.git pretrained_m
 git clone https://www.modelscope.cn/iic/CosyVoice-ttsfrd.git pretrained_models/CosyVoice-ttsfrd
 ```
 
-Optionaly, you can unzip `ttsfrd` resouce and install `ttsfrd` package for better text normalization performance.
+Optionally, you can unzip `ttsfrd` resouce and install `ttsfrd` package for better text normalization performance.
 
 Notice that this step is not necessary. If you do not install `ttsfrd` package, we will use WeTextProcessing by default.
 
@@ -156,7 +156,7 @@ for i, j in enumerate(cosyvoice.inference_instruct2('收到好友从远方寄来
 ```python
 cosyvoice = CosyVoice('pretrained_models/CosyVoice-300M-SFT', load_jit=True, load_onnx=False, fp16=True)
 # sft usage
-print(cosyvoice.list_avaliable_spks())
+print(cosyvoice.list_available_spks())
 # change stream=True for chunk stream inference
 for i, j in enumerate(cosyvoice.inference_sft('你好，我是通义生成式语音大模型，请问有什么可以帮您的吗？', '中文女', stream=False)):
     torchaudio.save('sft_{}.wav'.format(i), j['tts_speech'], cosyvoice.sample_rate)
